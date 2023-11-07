@@ -2,11 +2,7 @@
 require "Conta.php";
 require "Cliente.php";
 
-$cliente = new Cliente( 2452792, 10.00, "Kevin", "000.000.000-00", "Três Marias", "20/05/2005");
+$conta = new Conta(57349, "kv", 0.00);
+$cliente = new Cliente("kevin", "000.000.000.00", "10/10/1000", $conta);
 
-echo $cliente->retornarNumero().PHP_EOL;
-echo $cliente->retornarSaldo().PHP_EOL;
-echo $cliente->retornarNome().PHP_EOL;
-echo $cliente->retornarCpf().PHP_EOL;
-echo $cliente->retornarEndereco().PHP_EOL;
-echo $cliente->retornarData().PHP_EOL;
+echo $cliente->retornarConta()->retornarNome();

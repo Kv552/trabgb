@@ -1,32 +1,42 @@
 <?php
-class Cliente extends Conta {
-    private $cpf;
-    private $endereco;
-    private $dataNasci;
+class Cliente {
+    private string $nome;
+    private string $cpf;
+    private string $dataNasci;
+    private Conta $conta;
     
-    public function __construct(float $numero,float $saldo, string $nome, string $cpf, string $endereco, string $dataNasci) {
-        parent::__construct($numero, $nome, $saldo);
+    public function __construct($nome, $cpf, $dataNasci, $conta) {
+        $this->definirNome($nome);
         $this->definirCpf($cpf);
-        $this->definirEndereco($endereco);
         $this->definirData($dataNasci);
+        $this->definirConta($conta);
+
     }
 
-    public function definirCpf($cpf) {
+    public function definirNome(string $nome) {
+        $this->nome = $nome;
+    }
+    public function definirCpf(string $cpf) {
         $this->cpf = $cpf;
+    }
+    public function definirData(string $dataNasci) {
+        $this->dataNasci = $dataNasci;
+    }
+    public function definirConta(Conta $conta) {
+        $this->conta = $conta;
+    }
+    public function retornarNome() {
+        return $this->nome;
     }
     public function retornarCpf() {
         return $this->cpf;
     }
-    public function definirEndereco($endereco) {
-        $this->endereco = $endereco;
-    }
-    public function retornarEndereco() {
-        return $this->endereco;
-    }
-    public function definirData($dataNasci) {
-        $this->dataNasci = $dataNasci;
-    }
     public function retornarData() {
         return $this->dataNasci;
     }
+    public function retornarConta() {
+        return $this->conta;
+    }
+    
+
 }

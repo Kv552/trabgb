@@ -4,7 +4,7 @@ Class Conta {
     private $nome;
     private $saldo;
 
-    function __construct(float $numero, string $nome, float $saldo) {
+    function __construct(int $numero, string $nome, float $saldo) {
         $this->definirNumero($numero);
         $this->definirNome($nome);
         $this->definirSaldo($saldo);
